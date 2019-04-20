@@ -4,20 +4,9 @@ import textconverter
 from prediction import predict
 app = Flask(__name__)
 
-@app.route('/hello', methods = ['GET'])
-def api_hello():
-    data = {
-            'hello' : 'test',
-
-            }
-    js = json.dumps(data)
-    resp = Response(js, status=200, mimetype='application/json')
-    return resp
-
 @app.route('/', methods = ['GET'])
 def index():
     return send_from_directory("./www", 'index.html')
-
 
 @app.route('/chat', methods = ['POST'])
 def upload_file():
