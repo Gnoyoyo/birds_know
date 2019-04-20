@@ -22,10 +22,21 @@ def index():
 @app.route('/chat', methods = ['POST'])
 def upload_file():
     file = request.files['file']
-    file.save("./upload/chat.txt")
-    return "success"
+    file.save("./upload/input.txt")
+    textconverter.convert_text("output/input","chat")
+    filename = 'chat.csv'
+    owner = 'my_line_name'
+    output = predict(filename, owner)
+    data = {
+            'score' :  output
+
+            }
+    js = json.dumps(data)
+    resp = Response(js, status=200, mimetype='application/json')
+    return resp
 
 if __name__ == '__main__':
+    textconverter.convert_text("output/input","chat")
     filename = 'chat.csv'
     owner = 'my_line_name'
     print(predict(filename, owner))
