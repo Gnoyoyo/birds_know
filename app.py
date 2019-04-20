@@ -1,6 +1,7 @@
 import os
 from flask import *
 import textconverter
+from prediction import predict
 app = Flask(__name__)
 
 @app.route('/hello', methods = ['GET'])
@@ -25,4 +26,7 @@ def upload_file():
     return "success"
 
 if __name__ == '__main__':
+    filename = 'chat.csv'
+    owner = 'my_line_name'
+    print(predict(filename, owner))
     app.run()
