@@ -21,11 +21,12 @@ def index():
 
 @app.route('/chat', methods = ['POST'])
 def upload_file():
+    print("Upload")
     file = request.files['file']
-    file.save("./upload/input.txt")
-    textconverter.convert_text("output/input","chat")
+    file.save("input.txt")
+    textconverter.convert_text("input","chat")
     filename = 'chat.csv'
-    owner = 'my_line_name'
+    owner = 'Max.'
     output = predict(filename, owner)
     data = {
             'score' :  output
@@ -36,8 +37,8 @@ def upload_file():
     return resp
 
 if __name__ == '__main__':
-    textconverter.convert_text("output/input","chat")
-    filename = 'chat.csv'
-    owner = 'my_line_name'
-    print(predict(filename, owner))
+    # textconverter.convert_text("input","chat")
+    # filename = 'chat.csv'
+    # owner = 'Max.'
+    # print(predict(filename, owner))
     app.run()
