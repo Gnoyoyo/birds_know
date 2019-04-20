@@ -1,5 +1,4 @@
-# birds_know
-Back-end fro birds know project for stupidHackthon2019
+# birds_know for stupidHackthon2019
 
 
 #### Install pip
