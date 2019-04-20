@@ -7,7 +7,16 @@ app = Flask(__name__)
 CORS(app)
 @app.route('/', methods = ['GET'])
 def index():
-    return send_from_directory("./www", 'index.html')
+    return send_from_directory("./www", 'indexTest.html')
+    #return render_template("www/indexTest.html")
+
+@app.route('/assets/js/<path:path>')
+def send_js(path):
+    return send_from_directory('./www/assets/js/', path)
+
+@app.route('/assets/css/<path:path>')
+def send_css(path):
+    return send_from_directory('./www/assets/css/', path)
 
 @app.route('/chat', methods = ['POST'])
 def upload_file():
