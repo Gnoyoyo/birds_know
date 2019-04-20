@@ -24,6 +24,11 @@ def send_css(path):
 def send_css(path):
     return send_from_directory('./www/assets/image/', path)
 
+@app.route('/assets/font/<path:path>')
+def send_css(path):
+    return send_from_directory('./www/assets/font/', path)
+
+
 @app.route('/chat', methods = ['POST'])
 def upload_file():
     print("Upload")
