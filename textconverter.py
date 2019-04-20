@@ -26,7 +26,7 @@ def convert_text(inputFile, outputFile):
 
     csv.write("date,time,name,message\n")
     text = file.readline().split()
-
+    text[0] = text[0][1:]
     while len(text) != 0:
 
         if dateFormat.match(text[0]) is not None:

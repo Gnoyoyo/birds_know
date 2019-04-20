@@ -28,6 +28,7 @@ def upload_file():
     textconverter.convert_text("input","chat")
     filename = 'chat.csv'
     owner = 'Max.'
+    print("Before")
     output = predict(filename, owner)
     data = {
             'score' :  output
