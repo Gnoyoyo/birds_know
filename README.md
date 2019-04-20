@@ -1,4 +1,4 @@
-# birds_know for stupidHackthon2019
+# birds_know for StupidHackathon2019
 
 
 #### Install pip
