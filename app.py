@@ -3,6 +3,7 @@ from flask import *
 import textconverter
 from prediction import predict
 from flask_cors import CORS
+import pandas as pd
 
 app = Flask(__name__)
 CORS(app)
@@ -36,7 +37,7 @@ def upload_file():
     file.save("input.txt")
     textconverter.convert_text("input","chat")
     filename = 'chat.csv'
-    owner = 'Max.'
+    owner = str(pd.read_csv(filename)['name'][0])
     print("Before")
     output = predict(filename, owner)
     data = {
