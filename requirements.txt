@@ -1,2 +1,5 @@
 gunicorn
 gevent
+pandas
+flask
+flask-cors
