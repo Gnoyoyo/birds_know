@@ -9,7 +9,7 @@ CORS(app)
 
 @app.route('/', methods = ['GET'])
 def index():
-    return send_from_directory("./www", 'indexTest.html')
+    return send_from_directory("./www", 'index.html')
     #return render_template("www/indexTest.html")
 
 @app.route('/assets/js/<path:path>')
@@ -21,11 +21,11 @@ def send_css(path):
     return send_from_directory('./www/assets/css/', path)
 
 @app.route('/assets/image/<path:path>')
-def send_css(path):
+def send_image(path):
     return send_from_directory('./www/assets/image/', path)
 
 @app.route('/assets/font/<path:path>')
-def send_css(path):
+def send_font(path):
     return send_from_directory('./www/assets/font/', path)
 
 

@@ -1,13 +1,49 @@
-<html>
-<head>
-    <title>upload</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-</head>
-<body class="container">
-    <div class="form-group">
-    <form action = "/chat" method = "post" enctype="multipart/form-data">
-        <input type="file" name="file" />
-        <input type = "submit" value="Upload">
-    </form>
-</body>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Nok Roo Na</title>
+    <script
+      src="https://code.jquery.com/jquery-3.4.0.min.js"
+      integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg="
+      crossorigin="anonymous"
+    ></script>
+    <script src="/assets/js/global.js"></script>
+    <link rel="stylesheet" type="text/css" href="/assets/css/global.css" />
+  </head>
+  <body>
+    <div class="cover-container flex-col">
+      <div class="cover flex-col">
+        <img
+          class="cover-image"
+          src="/assets/image/landing.png"
+          alt="landing"
+        />
+      </div>
+      <span class="cover-text"
+        >เขาคิดยังไงกับคุณ
+        <span class="cover-highlight">นกรู้นะ</span> ลองถามได้</span
+      >
+      <input type="file" style="display: none;" id="file" accept="text/plain" />
+      <div class="cover-bottom flex-col" id="cover-bottom">
+        <div class="cover-bottom-container">
+          <img
+            id="cover-bottom-image"
+            class="cover-bottom-image"
+            src="/assets/image/landing2.png"
+            alt="landing2"
+          />
+        </div>
+      </div>
+      <div id="loading" class="flex-col">
+        <img
+          class="loading-img"
+          src="/assets/image/loading.gif"
+          alt="loading"
+        />
+      </div>
+    </div>
+    <img src="/assets/image/footer.png" alt="footer" class="footer" />
+  </body>
 </html>
